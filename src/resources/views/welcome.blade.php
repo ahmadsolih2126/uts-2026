@@ -22,11 +22,11 @@
         </a>
         <nav>
             <ul class="desktop-nav">
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#work">Pembuka</a></li>
+                <li><a href="#about">Tentang saya</a></li>
+                <li><a href="#services">Informasi Lanjut</a></li>
+                <li><a href="#testimonials">Motivasi</a></li>
+                <li><a href="#contact">Kontak Saya</a></li>
             </ul>
         </nav>
         <div class="menu-icon">
@@ -77,7 +77,7 @@
                 <div class="project-details {{ $index === 0 ? 'active' : '' }}" data-project="{{ $index }}">
                     <div class="project-number">0{{ $index + 1 }} / 0{{ count($projects) }}</div>
                     <h1 class="project-title">{{ $project->title }}</h1>
-                    <span class="project-category">{{ $project->category ?? 'Web Design' }}</span>
+                    <span class="project-category">{{ $project->category ?? 'Personal Web' }}</span>
                     <p class="project-description">
                         {{ $project->description }}
                     </p>
@@ -107,11 +107,11 @@
                     <div class="project-number">01 / 03</div>
                     <h1 class="project-title">UTS</h1>
                     <span class="project-category">Web Design</span>
-                    <p class="project-description">Laporan project pemograman web : Sistem Pemesanan Alat Olahraga Berbasis Web</p>
+                    <p class="project-description">Anything about me</p>
                     <div class="project-info">
-                        <div class="info-item"><h4>Client</h4><p>Mister</p></div>
-                        <div class="info-item"><h4>Year</h4><p>2026</p></div>
-                        <div class="info-item"><h4>Role</h4><p>Frontend Dev</p></div>
+                        <div class="info-item"><h4>Date</h4><p>02</p></div>
+                        <div class="info-item"><h4>month</h4><p>Desember</p></div>
+                        <div class="info-item"><h4>Year</h4><p>2005</p></div>
                     </div>
                     <div class="project-tags"><span class="tag">UI/UX</span><span class="tag">Frontend</span></div>
                     <a href="#" class="view-project-btn">View Project →</a>
@@ -145,67 +145,67 @@
     <section id="about" class="about-section">
         <div class="about-split">
             <div class="about-content">
-                <h2>{{ $profile_title ?? 'Tentang Saya' }}</h2>
+                <h2>{{ $profile_title ?? 'Tentang saya' }}</h2>
                 <p>{{ $profile_bio_1 ?? "Hi, Nama saya AHMAD SOLIH DARMAWAN Kelahiran 02 Desember 2006, saat ini saya menempuh pendidikan di universitas esa unggul kampus Tangerang, dengan jurusan SISTEM INFORMASI" }}</p>
-                <p>{{ $profile_bio_2 ?? 'saat ini saya merancang web SISTEM PEMESANAN ALAT OLAHRAGA BERBASIS WEB, dengan bertujuan memudahkan proses pemesanan online dalam dunia digital' }}</p>
-                <p>program ini akan berjalan selama beberapa tahun kedepan, demi mendukung era teknologi digital khususnya pada dunia olahraga, hingga menempuh kesuksesan untuk para pecinta olahraga, "hdup sehat, Akal Sehat".</p>
+                <p>{{ $profile_bio_2 ?? 'Semakin Berjalanya Teknologi kini saya mengembangkan PERSONAL WEB tentang pribadi/portofolio saya, mengingat saya ingin mengembangkan portofolio berbasis web' }}</p>
+                <p>mungkin personal web ini bisa menjadi pelajaran untuk rekan rekan anak muda di luar sana yang ingin berkarir melalui pengambangan era teknologi seperti saat ini".</p>
                 <div class="about-stats">
                     <div class="stat-item">
-                        <h3>{{ isset($projects) ? count($projects) : 3 }}+</h3>
-                        <p>Projects</p>
+                        <h3>{{ isset($projects) ? count($projects) : 5 }}</h3>
+                        <p>Pencapaian</p>
                     </div>
                     <div class="stat-item">
-                        <h3>18</h3>
-                        <p>Usia</p>
+                        <h3>5</h3>
+                        <p>Dokumentasi</p>
                     </div>
                     <div class="stat-item">
-                        <h3>{{ $years_experience ?? '2' }}</h3>
-                        <p>Years</p>
+                        <h3>{{ $years_experience ?? '5' }}</h3>
+                        <p>pengalaman</p>
                     </div>
                 </div>
             </div>
-            <div class="about-image" style="background-image: url('{{ asset('image/fa.jpeg') }}'); background-size: cover; background-position: center;"></div>
+            <div class="about-image" style="background-image: url('{{ asset('image/my.jpg') }}'); background-size: cover; background-position: center;"></div>
         </div>
     </section>
 
     <section id="services" class="services-section">
         <div class="services-container">
             <div class="section-header">
-                <h2>Tentang Saya</h2>
-                <p>Informasi Pribadi</p>
+                <h2>Informasi lebih lanjut</h2>
+                <p>Deskripsi kecil, Tujuan & Motivasi, Pengembangan Website</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-number">01</div>
-                    <h3>Info Lebih Lanjut</h3>
-                    <p>Pencapaian Individu</p>
+                    <h3>Deskripsi Kecil</h3>
+                    <p>Perjalanan dan latar belakang saya dalam dunia teknologi</p>
                     <ul class="service-list">
                         <li>Latar Belakang</li>
-                        <li>Edukasi</li>
-                        <li>Penghargaan</li>
+                        <li>Pendidikan</li>
                         <li>Pengalaman</li>
+                        <li>Pencapaian</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-number">02</div>
-                    <h3>Visual</h3>
-                    <p>Mimpi yang ingin dicapai</p>
+                    <h3>Tujuan & Motivasi</h3>
+                    <p>Hal-hal yang memotivasi saya dalam belajar dan berkembang</p>
                     <ul class="service-list">
-                        <li>Identitas</li>
-                        <li>Visi & Misi</li>
-                        <li>Kehidupan</li>
-                        <li>Keluarga</li>
+                        <li>Visi pribadi</li>
+                        <li>Target karir</li>
+                        <li>Motivasi belajar</li>
+                        <li>pengambangan diri</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-number">03</div>
-                    <h3>Planing Web</h3>
-                    <p>Tugas Akhir</p>
+                    <h3>Pengambangan Website</h3>
+                    <p>Proses dan perancangan pengembangan personal website</p>
                     <ul class="service-list">
-                        <li>Logo</li>
-                        <li>Fitur</li>
-                        <li>Design</li>
-                        <li>Analisis</li>
+                        <li>Konsep Website</li>
+                        <li>Fitur Website</li>
+                        <li>Design Interface</li>
+                        <li>Teknologi yang digunakan</li>
                     </ul>
                 </div>
             </div>
@@ -215,40 +215,40 @@
     <section id="testimonials" class="testimonials-section">
         <div class="testimonials-container">
             <div class="section-header">
-                <h2>Client Testimonials</h2>
-                <p>What people say about working with me</p>
+                <h2>Motivasi</h2>
+                <p>Beberapa peran penting</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Working with this designer was an absolute pleasure. The brand identity they created exceeded our expectations and perfectly captured our vision. Highly recommended!</p>
+                    <p class="testimonial-text">Mungkin orang tua menjadi salah satu peran utama atas apa yang saya lakukan ini, hanya merekalah yang ada di saat saya terjatuh dalam ke adaan apapun</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SK</div>
                         <div class="author-info">
-                            <h4>Prinsip</h4>
-                            <p>Kemajuan Pribadi</p>
+                            <h4>Orang Tua</h4>
+                            <p>Tokoh utama</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">The attention to detail and creative approach made all the difference. Our website redesign not only looks stunning but has significantly improved our conversion rates.</p>
+                    <p class="testimonial-text">Adapun guru yang memberikan ilmu atas pembuatan website ini, hingga saya dapat menempuh ilmu sampai saat ini</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">MJ</div>
                         <div class="author-info">
-                            <h4>Kemajuan Pribadi</h4>
-                            <p>Hidup Dalam Dunia Digital</p>
+                            <h4>Guru</h4>
+                            <p>Tokoh Kedua</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Professional, creative, and always on time. The entire process was smooth and collaborative. We couldn't be happier with the final results.</p>
+                    <p class="testimonial-text">Selain orang tua dan guru yaitu diri saya sendiri, karena saya selalu berpikir hanya diri kita sendiri lah yang bisa membangun kerangka kesuksesan</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">EC</div>
                         <div class="author-info">
-                            <h4>Harapan</h4>
-                            <p>Prinsip Keluarga.</p>
+                            <h4>Diri Sendiri</h4>
+                            <p>Tokoh ketiga</p>
                         </div>
                     </div>
                 </div>
@@ -259,8 +259,8 @@
     <section id="contact" class="contact-section">
         <div class="contact-split">
             <div class="contact-info">
-                <h2>Let's Work Together</h2>
-                <p>Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.</p>
+                <h2>Menyerah ?</h2>
+                <p>Bukan pilihan saya dalam menyerah, karena tuhan tidak akan memberikan cobaan di luar kemampuan kita</p>
                 <div class="contact-details">
                     <!-- Tautan Email Otomatis -->
                     <div class="contact-item">
