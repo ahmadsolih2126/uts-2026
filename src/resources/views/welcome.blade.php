@@ -26,7 +26,7 @@
                 <li><a href="#about">Tentang saya</a></li>
                 <li><a href="#services">Informasi Lanjut</a></li>
                 <li><a href="#testimonials">Motivasi</a></li>
-                <li><a href="#contact">Kontak Saya</a></li>
+                <li><a href="#contact">Kumpul Tugas</a></li>
             </ul>
         </nav>
         <div class="menu-icon">
@@ -37,15 +37,14 @@
     <div class="mobile-nav">
         <button class="mobile-nav-close" aria-label="Close menu">×</button>
         <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#work">Pembuka</a></li>
+            <li><a href="#about">Tentang saya</a></li>
+            <li><a href="#services">Informasi Lanjut</a></li>
+            <li><a href="#testimonials">Motivasi</a></li>
+            <li><a href="#contact">Kumpul Tugas</a></li>
         </ul>
         <div class="mobile-nav-footer">
             <p>Let's create something amazing together</p>
-            <!-- Perbaikan tautan email pada menu mobile -->
             <a href="mailto:ahmadsolij@gmail.com?subject=Tanya%20Mengenai%20Project">ahmadsolij@gmail.com</a>
         </div>
     </div>
@@ -55,7 +54,7 @@
             @if(isset($projects) && count($projects) > 0)
                 @foreach($projects as $index => $project)
                 <div class="image-container {{ $index === 0 ? 'active' : '' }}" data-project="{{ $index }}">
-                    <div class="project-image" style="background-image: url('{{ asset('image/bandung.jpeg') }}');"></div>
+                    <div class="project-image" style="background-image: url('{{ asset($project->image_path ?? 'image/bandung.jpeg') }}');"></div>
                 </div>
                 @endforeach
             @else
@@ -99,7 +98,7 @@
                         <span class="tag">Web Dev</span>
                         <span class="tag">Fullstack</span>
                     </div>
-                    <a href="{{ $project->link ?? '#' }}" class="view-project-btn">View Project →</a>
+                    <a href="{{ asset($project->file_path ?? '#') }}" target="_blank" class="view-project-btn">View Project →</a>
                 </div>
                 @endforeach
             @else
@@ -114,7 +113,7 @@
                         <div class="info-item"><h4>Year</h4><p>2005</p></div>
                     </div>
                     <div class="project-tags"><span class="tag">UI/UX</span><span class="tag">Frontend</span></div>
-                    <a href="#" class="view-project-btn">View Project →</a>
+                    <a href="{{ asset('dokumen/tugas_uts.pdf') }}" target="_blank" class="view-project-btn">View Project →</a>
                 </div>
             @endif
         </div>
@@ -259,10 +258,9 @@
     <section id="contact" class="contact-section">
         <div class="contact-split">
             <div class="contact-info">
-                <h2>Menyerah ?</h2>
-                <p>Bukan pilihan saya dalam menyerah, karena tuhan tidak akan memberikan cobaan di luar kemampuan kita</p>
+                <h2>Punya Tugas Baru?</h2>
+                <p>Kumpulkan file tugas (PDF atau Word) kamu di sini agar sistem menyimpannya ke dalam server lokal secara dinamis.</p>
                 <div class="contact-details">
-                    <!-- Tautan Email Otomatis -->
                     <div class="contact-item">
                         <div class="contact-item-icon">📧</div>
                         <div class="contact-item-content">
@@ -270,7 +268,6 @@
                             <a href="mailto:ahmadsolij@gmail.com?subject=Tanya%20Mengenai%20Project">ahmadsolij@gmail.com</a>
                         </div>
                     </div>
-                    <!-- Tautan WhatsApp Otomatis -->
                     <div class="contact-item">
                         <div class="contact-item-icon">📱</div>
                         <div class="contact-item-content">
@@ -280,43 +277,32 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Tautan Google Maps -->
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📍</div>
-                        <div class="contact-item-content">
-                            <h4>Location</h4>
-                            <a href="https://www.google.com/maps/place/Indonesia, Banten, Tangerang" target="_blank">Indonesia, Banten, Tangerang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link" title="Dribbble">Dr</a>
-                    <a href="#" class="social-link" title="Behance">Be</a>
-                    <a href="#" class="social-link" title="Instagram">In</a>
-                    <a href="#" class="social-link" title="LinkedIn">Li</a>
-                    <a href="#" class="social-link" title="Twitter">Tw</a>
                 </div>
             </div>
 
-            <form class="contact-form" action="#" method="POST">
+            <form class="contact-form" action="{{ route('tugas.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                
+                @if(session('success'))
+                    <div style="color: #28a745; margin-bottom: 15px; font-weight: bold;">{{ session('success') }}</div>
+                @endif
+                @if(session('error'))
+                    <div style="color: #dc3545; margin-bottom: 15px; font-weight: bold;">{{ session('error') }}</div>
+                @endif
+
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Nama Mahasiswa</label>
+                    <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="subject">Mata Kuliah / Judul Tugas</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Contoh: Pemrograman Berbasis Web">
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
+                    <label for="file_tugas" style="display: block; margin-bottom: 8px;">Pilih File Tugas (PDF, DOC, DOCX)</label>
+                    <input type="file" id="file_tugas" name="file_tugas" accept=".pdf,.doc,.docx" required style="padding: 10px 0; color: #fff;">
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn">Kumpulkan Tugas</button>
             </form>
         </div>
     </section>
