@@ -1,23 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Livewire\Livewire;
-use Illuminate\Support\Facades\Response;
+use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Artisan;
 
-/* NOTE: Do Not Remove
-/ Livewire asset handling if using sub folder in domain
-*/
+// --- HALAMAN UTAMA (Membuka welcome.blade.php dengan Data) ---
+Route::get('/', [PortofolioController::class, 'index'])->name('welcome');
 
-Livewire::setUpdateRoute(function ($handle) {
-    return Route::post(config('app.asset_prefix') . '/livewire/update', $handle);
+// --- PENGIRIMAN FORM CONTACT ---
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// --- PANEL ADMIN (Untuk CRUD & Update Progress Laporan) ---
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/dashboard', [PortofolioController::class, 'adminDashboard'])->name('dashboard');
+    Route::resource('portofolio', PortofolioController::class)->except(['index']);
 });
 
-Livewire::setScriptRoute(function ($handle) {
-    return Route::get(config('app.asset_prefix') . '/livewire/livewire.js', $handle);
-});
-/*
-/ END
-*/
-Route::get('/', function () {
-    return view('welcome');
+// --- JALUR SAKTI TANPA TERMINAL (Udah gua keluarin dari group admin) ---
+Route::get('/rakit-database', function() {
+    Artisan::call('migrate:fresh');
+    return "Mantap bro! Tabel udah otomatis dibuat tanpa terminal. Sekarang balik ke uts.test";
 });
