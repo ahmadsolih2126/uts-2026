@@ -3,314 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Split-Screen Portfolio - Free HTML Template</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Archivo:wght@300;400;600;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ asset('front/tooplate-split-portfolio.css') }}">
+    <title>Portfolio - Dynamic Mode</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar-custom {
+            background-color: #121212;
+            padding: 20px 0;
+        }
+        .navbar-brand-custom {
+            font-weight: bold;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .nav-link-custom {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .nav-link-custom:hover, .nav-link-custom.active {
+            color: #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 5px;
+        }
+        .main-content {
+            padding: 80px 0;
+        }
+        .badge-category {
+            background-color: #ff2a5f;
+            color: white;
+            padding: 8px 16px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .project-title {
+            font-size: 64px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+        .project-desc {
+            color: #bbbbbb;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .meta-label {
+            font-size: 12px;
+            color: #777777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .meta-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .badge-tag {
+            background-color: #2a2a2a;
+            color: #888888;
+            padding: 6px 16px;
+            font-size: 14px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .btn-view {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 12px 30px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-view:hover {
+            background-color: #ffffff;
+            color: #1e1e1e;
+        }
+        .project-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .project-wrapper {
+            margin-bottom: 100px; /* Jarak antar project kalau datanya lebih dari satu */
+            border-bottom: 1px solid #333333;
+            padding-bottom: 60px;
+        }
+        .project-wrapper:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <a href="#work" class="logo">
-            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#ff3366" stroke-width="3"/>
-                <path d="M 30 40 L 50 60 L 70 40" fill="none" stroke="#ff3366" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="50" cy="70" r="3" fill="#ff3366"/>
-            </svg>
-            <span>Portfolio</span>
-        </a>
-        <nav>
-            <ul class="desktop-nav">
-                <li><a href="#work">Pembuka</a></li>
-                <li><a href="#about">Tentang saya</a></li>
-                <li><a href="#services">Informasi Lanjut</a></li>
-                <li><a href="#testimonials">Motivasi</a></li>
-                <li><a href="#contact">Kumpul Tugas</a></li>
-            </ul>
-        </nav>
-        <div class="menu-icon">
-            <span></span>
-        </div>
-    </header>
 
-    <div class="mobile-nav">
-        <button class="mobile-nav-close" aria-label="Close menu">×</button>
-        <ul>
-            <li><a href="#work">Pembuka</a></li>
-            <li><a href="#about">Tentang saya</a></li>
-            <li><a href="#services">Informasi Lanjut</a></li>
-            <li><a href="#testimonials">Motivasi</a></li>
-            <li><a href="#contact">Kumpul Tugas</a></li>
-        </ul>
-        <div class="mobile-nav-footer">
-            <p>Let's create something amazing together</p>
-            <a href="mailto:ahmadsolij@gmail.com?subject=Tanya%20Mengenai%20Project">ahmadsolij@gmail.com</a>
+    <nav class="navbar-custom">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="navbar-brand-custom">
+                <span style="border: 1px solid #ff2a5f; padding: 5px 10px; border-radius: 50%; margin-right: 10px; color: #ff2a5f;">Y</span>Portfolio
+            </a>
+            <div class="d-flex">
+                <a href="#" class="nav-link-custom active">Pembuka</a>
+                <a href="#" class="nav-link-custom">Tentang saya</a>
+                <a href="#" class="nav-link-custom">Informasi Lanjut</a>
+                <a href="#" class="nav-link-custom">Motivasi</a>
+                <a href="#" class="nav-link-custom">Kumpul Tugas</a>
+            </div>
         </div>
+    </nav>
+
+    <div class="container main-content">
+        
+        @if($portofolios->isEmpty())
+            <div class="text-center py-5">
+                <h3>Belum ada data project, brader.</h3>
+                <p class="text-muted">Silakan tembak jalur sakti dulu atau isi lewat admin panel.</p>
+            </div>
+        @else
+            @foreach($portofolios as $project)
+                <div class="row align-items-center project-wrapper">
+                    
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        @if($project->image)
+                            <img src="{{ asset('images/' . $project->image) }}" alt="Project Image" class="project-image">
+                        @else
+                            <div style="background-color: #2a2a2a; width: 100%; height: 400px; display: flex; align-items: center; justify-content: center; color: #555555;">
+                                [ Gambar Belum Diupload ]
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="col-lg-6 ps-lg-5">
+                        <div class="badge-category">{{ $project->category }}</div>
+                        <h1 class="project-title">{{ $project->title }}</h1>
+                        <p class="project-desc">{{ $project->description }}</p>
+
+                        <div class="row mb-4">
+                            <div class="col-4">
+                                <div class="meta-label">Date</div>
+                                <div class="meta-value">{{ $project->date_day }}</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="meta-label">Month</div>
+                                <div class="meta-value">{{ $project->date_month }}</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="meta-label">Year</div>
+                                <div class="meta-value">{{ $project->date_year }}</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-5">
+                            @if($project->tags)
+                                @foreach(explode(',', $project->tags) as $tag)
+                                    <span class="badge-tag">{{ trim($tag) }}</span>
+                                @endforeach
+                            @endif
+                        </div>
+
+                        <div>
+                            <a href="{{ $project->project_url ?? '#' }}" target="_blank" class="btn-view">View Project →</a>
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
+        @endif
+
     </div>
 
-    <div class="split-container" id="work">
-        <div class="left-panel">
-            @if(isset($projects) && count($projects) > 0)
-                @foreach($projects as $index => $project)
-                <div class="image-container {{ $index === 0 ? 'active' : '' }}" data-project="{{ $index }}">
-                    <div class="project-image" style="background-image: url('{{ asset($project->image_path ?? 'image/bandung.jpeg') }}');"></div>
-                </div>
-                @endforeach
-            @else
-                <div class="image-container active" data-project="0">
-                    <div class="project-image" style="background-image: url('{{ asset('image/bandung.jpeg') }}');"></div>
-                </div>
-                <div class="image-container" data-project="1">
-                    <div class="project-image" style="background-image: url('{{ asset('image/bandung.jpeg') }}');"></div>
-                </div>
-                <div class="image-container" data-project="2">
-                    <div class="project-image" style="background-image: url('{{ asset('image/bandung.jpeg') }}');"></div>
-                </div>
-            @endif
-        </div>
-
-        <div class="right-panel">
-            @if(isset($projects) && count($projects) > 0)
-                @foreach($projects as $index => $project)
-                <div class="project-details {{ $index === 0 ? 'active' : '' }}" data-project="{{ $index }}">
-                    <div class="project-number">0{{ $index + 1 }} / 0{{ count($projects) }}</div>
-                    <h1 class="project-title">{{ $project->title }}</h1>
-                    <span class="project-category">{{ $project->category ?? 'Personal Web' }}</span>
-                    <p class="project-description">
-                        {{ $project->description }}
-                    </p>
-                    <div class="project-info">
-                        <div class="info-item">
-                            <h4>Client</h4>
-                            <p>{{ $project->client ?? 'Internal Project' }}</p>
-                        </div>
-                        <div class="info-item">
-                            <h4>Year</h4>
-                            <p>{{ $project->year ?? '2026' }}</p>
-                        </div>
-                        <div class="info-item">
-                            <h4>Role</h4>
-                            <p>{{ $project->role ?? 'Developer' }}</p>
-                        </div>
-                    </div>
-                    <div class="project-tags">
-                        <span class="tag">Web Dev</span>
-                        <span class="tag">Fullstack</span>
-                    </div>
-                    <a href="{{ asset($project->file_path ?? '#') }}" target="_blank" class="view-project-btn">View Project →</a>
-                </div>
-                @endforeach
-            @else
-                <div class="project-details active" data-project="0">
-                    <div class="project-number">01 / 03</div>
-                    <h1 class="project-title">UTS</h1>
-                    <span class="project-category">Web Design</span>
-                    <p class="project-description">Anything about me</p>
-                    <div class="project-info">
-                        <div class="info-item"><h4>Date</h4><p>02</p></div>
-                        <div class="info-item"><h4>month</h4><p>Desember</p></div>
-                        <div class="info-item"><h4>Year</h4><p>2005</p></div>
-                    </div>
-                    <div class="project-tags"><span class="tag">UI/UX</span><span class="tag">Frontend</span></div>
-                    <a href="{{ asset('dokumen/tugas_uts.pdf') }}" target="_blank" class="view-project-btn">View Project →</a>
-                </div>
-            @endif
-        </div>
-
-        <div class="project-controls">
-            <div class="progress-indicator">
-                @if(isset($projects) && count($projects) > 0)
-                    @foreach($projects as $index => $project)
-                    <div class="progress-dot {{ $index === 0 ? 'active' : '' }}" data-project="{{ $index }}"></div>
-                    @endforeach
-                @else
-                    <div class="progress-dot active" data-project="0"></div>
-                    <div class="progress-dot" data-project="1"></div>
-                    <div class="progress-dot" data-project="2"></div>
-                @endif
-            </div>
-            <div class="navigation">
-                <div class="nav-arrow" id="prevBtn">
-                    <div class="arrow arrow-left"></div>
-                </div>
-                <div class="nav-arrow" id="nextBtn">
-                    <div class="arrow arrow-right"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="about" class="about-section">
-        <div class="about-split">
-            <div class="about-content">
-                <h2>{{ $profile_title ?? 'Tentang saya' }}</h2>
-                <p>{{ $profile_bio_1 ?? "Hi, Nama saya AHMAD SOLIH DARMAWAN Kelahiran 02 Desember 2006, saat ini saya menempuh pendidikan di universitas esa unggul kampus Tangerang, dengan jurusan SISTEM INFORMASI" }}</p>
-                <p>{{ $profile_bio_2 ?? 'Semakin Berjalanya Teknologi kini saya mengembangkan PERSONAL WEB tentang pribadi/portofolio saya, mengingat saya ingin mengembangkan portofolio berbasis web' }}</p>
-                <p>mungkin personal web ini bisa menjadi pelajaran untuk rekan rekan anak muda di luar sana yang ingin berkarir melalui pengambangan era teknologi seperti saat ini".</p>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h3>{{ isset($projects) ? count($projects) : 5 }}</h3>
-                        <p>Pencapaian</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>5</h3>
-                        <p>Dokumentasi</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>{{ $years_experience ?? '5' }}</h3>
-                        <p>pengalaman</p>
-                    </div>
-                </div>
-            </div>
-            <div class="about-image" style="background-image: url('{{ asset('image/my.jpg') }}'); background-size: cover; background-position: center;"></div>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="services-container">
-            <div class="section-header">
-                <h2>Informasi lebih lanjut</h2>
-                <p>Deskripsi kecil, Tujuan & Motivasi, Pengembangan Website</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3>Deskripsi Kecil</h3>
-                    <p>Perjalanan dan latar belakang saya dalam dunia teknologi</p>
-                    <ul class="service-list">
-                        <li>Latar Belakang</li>
-                        <li>Pendidikan</li>
-                        <li>Pengalaman</li>
-                        <li>Pencapaian</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3>Tujuan & Motivasi</h3>
-                    <p>Hal-hal yang memotivasi saya dalam belajar dan berkembang</p>
-                    <ul class="service-list">
-                        <li>Visi pribadi</li>
-                        <li>Target karir</li>
-                        <li>Motivasi belajar</li>
-                        <li>pengambangan diri</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3>Pengambangan Website</h3>
-                    <p>Proses dan perancangan pengembangan personal website</p>
-                    <ul class="service-list">
-                        <li>Konsep Website</li>
-                        <li>Fitur Website</li>
-                        <li>Design Interface</li>
-                        <li>Teknologi yang digunakan</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials-section">
-        <div class="testimonials-container">
-            <div class="section-header">
-                <h2>Motivasi</h2>
-                <p>Beberapa peran penting</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Mungkin orang tua menjadi salah satu peran utama atas apa yang saya lakukan ini, hanya merekalah yang ada di saat saya terjatuh dalam ke adaan apapun</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SK</div>
-                        <div class="author-info">
-                            <h4>Orang Tua</h4>
-                            <p>Tokoh utama</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Adapun guru yang memberikan ilmu atas pembuatan website ini, hingga saya dapat menempuh ilmu sampai saat ini</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MJ</div>
-                        <div class="author-info">
-                            <h4>Guru</h4>
-                            <p>Tokoh Kedua</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonial-text">Selain orang tua dan guru yaitu diri saya sendiri, karena saya selalu berpikir hanya diri kita sendiri lah yang bisa membangun kerangka kesuksesan</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">EC</div>
-                        <div class="author-info">
-                            <h4>Diri Sendiri</h4>
-                            <p>Tokoh ketiga</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="contact-split">
-            <div class="contact-info">
-                <h2>Punya Tugas Baru?</h2>
-                <p>Kumpulkan file tugas (PDF atau Word) kamu di sini agar sistem menyimpannya ke dalam server lokal secara dinamis.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📧</div>
-                        <div class="contact-item-content">
-                            <h4>Email</h4>
-                            <a href="mailto:ahmadsolij@gmail.com?subject=Tanya%20Mengenai%20Project">ahmadsolij@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">📱</div>
-                        <div class="contact-item-content">
-                            <h4>WhatsApp</h4>
-                            <a href="https://wa.me/6282310094281?text=Halo%20Ahmad,%20saya%20tertarik%20dengan%20sistem%20pemesanan%20alat%20olahraga%20kamu." target="_blank">
-                                +62 82310094281
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <form class="contact-form" action="{{ route('tugas.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                
-                @if(session('success'))
-                    <div style="color: #28a745; margin-bottom: 15px; font-weight: bold;">{{ session('success') }}</div>
-                @endif
-                @if(session('error'))
-                    <div style="color: #dc3545; margin-bottom: 15px; font-weight: bold;">{{ session('error') }}</div>
-                @endif
-
-                <div class="form-group">
-                    <label for="name">Nama Mahasiswa</label>
-                    <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap">
-                </div>
-                <div class="form-group">
-                    <label for="subject">Mata Kuliah / Judul Tugas</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Contoh: Pemrograman Berbasis Web">
-                </div>
-                <div class="form-group">
-                    <label for="file_tugas" style="display: block; margin-bottom: 8px;">Pilih File Tugas (PDF, DOC, DOCX)</label>
-                    <input type="file" id="file_tugas" name="file_tugas" accept=".pdf,.doc,.docx" required style="padding: 10px 0; color: #fff;">
-                </div>
-                <button type="submit" class="submit-btn">Kumpulkan Tugas</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>Copyright © 2026 Your Company Name. All rights reserved. Design: <a rel="nofollow" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
-    </footer>
-
-    <script src="{{ asset('front/tooplate-split-scripts.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
